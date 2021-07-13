@@ -33,6 +33,7 @@ public class Product {
 	private String name;
 	private String price;
 	private String description;
+	private String imgSource;
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "group_id")
@@ -91,6 +92,14 @@ public class Product {
 
 	public void setGroup(ProductGroup group) {
 		this.group = group;
+	}
+
+	public String getImgSource() {
+		return imgSource;
+	}
+
+	public void setImgSource(String imgSource) {
+		this.imgSource = imgSource;
 	}
 
 }
