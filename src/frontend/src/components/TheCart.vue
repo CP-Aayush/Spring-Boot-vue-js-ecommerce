@@ -1,13 +1,11 @@
 <template>
   <ul>
   <li v-for="content in contents" :key="content.id">
+    <!-- <img :src="content.imgSource"/> -->
     <base-card>
-    <router-link style="text-decoration: none; color: inherit;" :to="{ name: 'product', params: { id: content.id }}">
-      <img style="max-width:100%;" :src="content.imgSource"/> 
-      <h2>{{ content.name }}</h2>
+      <h2>{{ content.productId.name }}</h2>
       <p>{{ content.description}}</p>
-      <h1>₹{{ content.price}}</h1>
-      </router-link>
+      <h1>{{ content.quantity}}</h1>
     </base-card>
   </li>
   </ul>
@@ -23,9 +21,8 @@ export default {
     }
   },
   mounted() {
-
      axios
-      .get('/api/products')
+      .get('/api/cart')
       .then(response => (this.contents = response.data))
 }
 }

@@ -1,14 +1,15 @@
 <template>
-  <HelloWorld />
+<the-header title="Guns for Sale"></the-header>
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from './components/Layout/TheHeader.vue';  
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TheHeader
   }
 }
 </script>
@@ -20,6 +21,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
